@@ -2,6 +2,9 @@
 
 This project is a simple web application built with Streamlit that allows users to input a research topic and fetch the top 20 related research papers from Google Scholar. The project uses the `scholarly` library to interact with Google Scholar without needing a web driver.
 
+https://research-paper-web-scapper-jaq3ldby7mtddytuakswep.streamlit.app
+
+
 ## Features
 
 - **Topic Search:** Input a research topic and retrieve the top 20 related research papers.
