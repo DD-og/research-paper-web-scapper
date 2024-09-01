@@ -22,3 +22,14 @@
    ```bash
    pip install -r requirements.txt
    ```
+
+
+## Usage
+
+1. **Run the Streamlit app:**
+
+   ```bash
+   streamlit run main.py
+   ```
+
+2. Open your web browser and navigate to the URL provided by Streamlit (usually `http://localhost:8501`).
