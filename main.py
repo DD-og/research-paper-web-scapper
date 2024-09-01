@@ -7,12 +7,13 @@ def search_scholar(topic, num_papers=10):
     for i, paper in enumerate(search_query):
         if i >= num_papers:
             break
+        paper_dict = paper
         papers.append({
-            'title': paper['bib']['title'],
-            'author': paper['bib']['author'],
-            'pub_year': paper['bib'].get('pub_year', 'N/A'),
-            'abstract': paper['bib'].get('abstract', 'No abstract available'),
-            'url': paper.get('eprint_url', 'No URL available')
+            'title': paper_dict.get('bib', {}).get('title', 'No title available'),
+            'author': paper_dict.get('bib', {}).get('author', 'No authors available'),
+            'pub_year': paper_dict.get('bib', {}).get('pub_year', 'N/A'),
+            'abstract': paper_dict.get('bib', {}).get('abstract', 'No abstract available'),
+            'url': paper_dict.get('pub_url', 'No URL available')  # Use 'pub_url' for the URL
         })
     return papers
 
@@ -31,7 +32,7 @@ if st.button("Search Papers"):
                 st.write(f"**Published Year:** {paper['pub_year']}")
                 st.write(f"**Abstract:** {paper['abstract']}")
                 if paper['url'] != 'No URL available':
-                    st.write(f"[Read more]({paper['url']})")
+                    st.markdown(f"[Click to go to the paper]({paper['url']})")
                 st.write("---")
         else:
             st.write("No papers found on this topic.")
